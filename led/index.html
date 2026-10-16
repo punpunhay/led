@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Лёд — крафтовое мороженое</title>
+<meta name="description" content="Мороженое из натуральных ингредиентов. Выберите вкус и закажите с доставкой.">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head>
+<body>
+<div id="wash"></div><canvas id="fx"></canvas>
+<header><a class="logo" href="#">Лёд</a><button id="cartBtn" aria-label="Корзина">Корзина <b id="cnt">0</b></button></header>
+<main>
+<section class="hero">
+ <div class="name" id="name" aria-live="polite"></div>
+ <div class="spr" aria-hidden="true"></div>
+ <svg id="cone" viewBox="0 -130 200 490" aria-label="Мороженое">
+  <defs><pattern id="wf" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0H14M0 0V14" stroke="#B9823F" stroke-width="2"/></pattern></defs>
+  <path d="M48 150L100 352L152 150Z" fill="#E8B26A"/><path d="M48 150L100 352L152 150Z" fill="url(#wf)"/>
+  <g class="sc" id="s1"><path d="M38 118C38 60 162 60 162 118C170 140 154 150 142 140C136 158 120 156 114 142C106 160 90 158 84 142C76 154 56 154 56 140C44 150 30 138 38 118Z"/><ellipse cx="78" cy="96" rx="20" ry="10" fill="#fff" opacity=".35" transform="rotate(-25 78 96)"/></g>
+  <g class="sc" id="s2"><path d="M44 58C44 0 156 0 156 58C150 74 140 76 130 70C122 82 108 82 100 72C92 84 76 82 70 70C60 78 46 72 44 58Z"/><ellipse cx="80" cy="38" rx="17" ry="8" fill="#fff" opacity=".35" transform="rotate(-25 80 38)"/></g>
+  <g class="sc" id="s3"><path d="M52 0C52 -52 148 -52 148 0C142 14 132 16 124 10C116 20 104 20 98 12C90 22 76 20 72 10C62 16 52 10 52 0Z"/><ellipse cx="86" cy="-20" rx="14" ry="7" fill="#fff" opacity=".35" transform="rotate(-25 86 -20)"/></g>
+ </svg>
+ <aside class="info">
+  <p id="desc"></p>
+  <div class="size" id="size" role="group" aria-label="Количество шариков"><button data-k="1">1 шарик</button><button data-k="2">2 шарика</button><button data-k="3">3 шарика</button></div>
+  <div class="buy"><strong id="price"></strong><button class="add" id="add">В корзину</button></div>
+ </aside>
+ <div class="ctl"><button id="prev" aria-label="Предыдущий вкус">←</button><div class="dots" id="dots"></div><button id="next" aria-label="Следующий вкус">→</button></div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div id="mq"></div></div>
+
+<section class="facts">
+ <article><h3>Без порошков</h3><p>Варим основу из фермерского молока и сливок. Сухих смесей на кухне нет.</p></article>
+ <article><h3>Каждое утро</h3><p>Партия делается на рассвете и заканчивается к вечеру. Остатки не замораживаем.</p></article>
+ <article><h3>Доставка в холоде</h3><p>Везём в сухом льду, поэтому мороженое доезжает твёрдым за 40 минут по городу.</p></article>
+</section>
+</main>
+<aside id="drawer" aria-hidden="true"><button id="close" aria-label="Закрыть">×</button><h2>Ваш заказ</h2><ul id="items"></ul><p class="tot">Итого: <b id="tot">0 ₽</b></p><button class="add" id="order">Оформить заказ</button><p id="done" hidden>Заказ принят. Курьер позвонит за 10 минут до приезда.</p></aside>
+<footer>«Лёд», Екатеринбург, ул. Вайнера, 9. Ежедневно 10:00–22:00</footer>
+<script src="main.js"></script></body></html>
